@@ -813,5 +813,5 @@ packages:
   size: 118849
   timestamp: 1784250406640
 - pypi: ./
-  name: organodes-dl
+  name: organoides-dl
   requires_python: '>=3.11'
