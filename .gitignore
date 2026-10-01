@@ -1,3 +1,7 @@
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+
+# Testing
+.ruff_cache/
+.mypy_cache/
