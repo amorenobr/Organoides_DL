@@ -5,3 +5,17 @@
 # Testing
 .ruff_cache/
 .mypy_cache/
+
+# Modelos entrenados
+*.keras
+*.h5
+
+# Imagene propias
+data/raw/figuras/
+data/raw/figuras_completas/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.tif
+*.tiff
