@@ -20,6 +20,7 @@ test = "pytest"
 lint = "ruff check ."
 fmt = "ruff format ."
 typecheck = "mypy src/Organoides_DL"
+medir = { cmd = "python scripts/medir_area.py", env = { PYTHONPATH = "src" } }
 
 [tool.pixi.dependencies]
 numpy = ">=2.5.3,<3"
@@ -32,3 +33,6 @@ pillow = ">=12.3.0,<13"
 
 [tool.pixi.pypi-dependencies]
 Organoides_DL = { path = ".", editable = true }
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

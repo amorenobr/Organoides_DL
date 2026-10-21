@@ -19,3 +19,8 @@ data/raw/figuras_completas/
 *.webp
 *.tif
 *.tiff
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
