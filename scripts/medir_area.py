@@ -15,4 +15,3 @@ for ruta in sorted(CARPETA_IMAGENES.glob("*.png")):
     resultados.append({"ID_imagen": ruta.stem, "porcentaje_area": round(porcentaje, 2)})
 
 pd.DataFrame(resultados).to_csv(SALIDA, index=False)
-
