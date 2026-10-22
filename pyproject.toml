@@ -22,6 +22,7 @@ fmt = "ruff format ."
 typecheck = "mypy src/Organoides_DL"
 medir = { cmd = "python scripts/medir_area.py", env = { PYTHONPATH = "src" } }
 histograma = { cmd = "python scripts/graficar_histograma.py", env = { PYTHONPATH = "src" } }
+preparar = "python scripts/divisionart_safranina.py"
 
 [tool.pixi.dependencies]
 numpy = ">=2.5.3,<3"
