@@ -9,7 +9,7 @@ fig_safranina = graficar_histograma(
     xlabel="Area teñida (%)",
     ylabel="Numero de imagenes",
     bins=range(0, 101, 10),
-    cortes=[10, 50],
+    cortes=[10, 70],
 )
 fig_safranina.savefig(
     "reports/figuras/histograma_safranina.png", dpi="figure", bbox_inches="tight"
