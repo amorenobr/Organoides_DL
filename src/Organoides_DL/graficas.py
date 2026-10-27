@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 def graficar_histograma(data, title, xlabel, ylabel, bins=10, cortes=None):
 
     fig = plt.figure(figsize=(15, 8))
-    _, _, barras = plt.hist(data, bins=bins, edgecolor="black", alpha=0.7)
+    _, _,barras = plt.hist(data, bins=bins, edgecolor="black", alpha=0.7)
     plt.bar_label(barras)
 
     if cortes is not None:

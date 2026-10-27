@@ -7,7 +7,6 @@ columnas = ["ID_imagen", "Paper_DOI","Usar_en_dataset"]
 
 union = pd.merge(area, dataset[columnas], on="ID_imagen", how="left")
 
-print(union["Usar_en_dataset"].value_counts())
 
 print(union["Paper_DOI"].isna().sum())
 
