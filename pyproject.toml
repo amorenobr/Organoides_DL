@@ -25,6 +25,7 @@ histograma = { cmd = "python scripts/graficar_histograma.py", env = { PYTHONPATH
 preparar = "python scripts/divisionart_safranina.py"
 verificar = { cmd = "python scripts/area_augmentation.py", env = { PYTHONPATH = "src" } }
 
+
 [tool.pixi.dependencies]
 numpy = ">=2.5.3,<3"
 pytest = ">=9.1.1,<10"

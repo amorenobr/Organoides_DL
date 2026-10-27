@@ -9,3 +9,12 @@ def test_porcentaje_area():
     imagen.paste((120, 140, 200), (50, 0, 75, 100))
 
     assert round(porcentaje_area(imagen), 2) == 66.67
+
+def test_rojo_brillante_cuenta_como_tenido():
+    imagen = Image.new("RGB", (100, 100), (245, 140, 110))
+    assert porcentaje_area(imagen) > 99
+
+
+def test_rosado_palido_no_cuenta_como_tenido():
+    imagen = Image.new("RGB", (100, 100), (250, 215, 200))
+    assert porcentaje_area(imagen) < 1
