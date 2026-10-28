@@ -3,11 +3,11 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from Organoides_DL.preproces_densnet121 import cargar_imagen
 from sklearn.utils.class_weight import compute_class_weight
 from tensorflow import keras
 
-from Organoides_DL.modelo import construir_modelo
+from organoides_dl.modelo import construir_modelo
+from organoides_dl.preproces_densnet121 import cargar_imagen
 
 keras.utils.set_random_seed(42)
 

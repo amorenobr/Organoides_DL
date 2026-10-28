@@ -1,6 +1,6 @@
 import pandas as pd
 
-from Organoides_DL.graficas import graficar_histograma
+from organoides_dl.graficas import graficar_histograma
 
 df = pd.read_csv("data/processed/area_safranina.csv")
 fig_safranina = graficar_histograma(

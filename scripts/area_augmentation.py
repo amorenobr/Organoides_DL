@@ -5,8 +5,8 @@ import pandas as pd
 import tensorflow as tf
 from PIL import Image
 
-from Organoides_DL.augmentation import augmentation
-from Organoides_DL.medicion import porcentaje_area
+from organoides_dl.augmentation import augmentation
+from organoides_dl.medicion import porcentaje_area
 
 CARPETA = Path("data/raw/figuras")
 tabla = pd.read_csv("data/processed/safranina_folds.csv")

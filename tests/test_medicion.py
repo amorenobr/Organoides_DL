@@ -1,6 +1,6 @@
 from PIL import Image
 
-from Organoides_DL.medicion import porcentaje_area
+from organoides_dl.medicion import porcentaje_area
 
 
 def test_porcentaje_area():

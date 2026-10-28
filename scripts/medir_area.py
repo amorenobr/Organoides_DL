@@ -3,7 +3,7 @@ from pathlib import Path
 import pandas as pd
 from PIL import Image
 
-from Organoides_DL.medicion import porcentaje_area
+from organoides_dl.medicion import porcentaje_area
 
 CARPETA_IMAGENES = Path("data/raw/figuras")
 SALIDA = Path("data/processed/area_safranina.csv")

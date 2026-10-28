@@ -1,6 +1,6 @@
 import numpy as np
 
-from Organoides_DL.modelo import construir_modelo
+from organoides_dl.modelo import construir_modelo
 
 
 def test_modelo_probabilidades():

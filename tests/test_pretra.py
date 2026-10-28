@@ -1,6 +1,6 @@
 from PIL import Image
 
-from Organoides_DL.preproces_densnet121 import cargar_imagen
+from organoides_dl.preproces_densnet121 import cargar_imagen
 
 
 def test_cargar_imagen_queda_en_224(tmp_path):

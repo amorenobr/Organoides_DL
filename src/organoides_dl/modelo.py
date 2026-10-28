@@ -1,6 +1,6 @@
 from tensorflow import keras
 
-from Organoides_DL.augmentation import augmentation
+from organoides_dl.augmentation import augmentation
 
 
 def construir_modelo():

@@ -19,12 +19,13 @@ platforms = ["linux-64"]
 test = "pytest"
 lint = "ruff check ."
 fmt = "ruff format ."
-typecheck = "mypy src/Organoides_DL"
+typecheck = "mypy src/organoides_DL"
 medir = { cmd = "python scripts/medir_area.py", env = { PYTHONPATH = "src" } }
 histograma = { cmd = "python scripts/graficar_histograma.py", env = { PYTHONPATH = "src" } }
 preparar = "python scripts/divisionart_safranina.py"
 verificar = { cmd = "python scripts/area_augmentation.py", env = { PYTHONPATH = "src" } }
 entrenar = { cmd = "python scripts/entrenar.py", env = { PYTHONPATH = "src" } }
+metricas = "python scripts/metricas_safranina.py"
 
 
 [tool.pixi.dependencies]
