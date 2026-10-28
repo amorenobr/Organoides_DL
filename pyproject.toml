@@ -24,6 +24,7 @@ medir = { cmd = "python scripts/medir_area.py", env = { PYTHONPATH = "src" } }
 histograma = { cmd = "python scripts/graficar_histograma.py", env = { PYTHONPATH = "src" } }
 preparar = "python scripts/divisionart_safranina.py"
 verificar = { cmd = "python scripts/area_augmentation.py", env = { PYTHONPATH = "src" } }
+entrenar = { cmd = "python scripts/entrenar.py", env = { PYTHONPATH = "src" } }
 
 
 [tool.pixi.dependencies]

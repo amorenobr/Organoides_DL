@@ -20,9 +20,13 @@ for fila in tabla.itertuples():
     for _ in range(10):
         nueva = aumento(img[None], training=True)[0].numpy()
         nueva = np.clip(nueva, 0, 255).astype("uint8")
-        filas.append({"ID_imagen": fila.ID_imagen,
-                      "pct_original": fila.porcentaje_area,
-                      "pct_aumentada": porcentaje_area(Image.fromarray(nueva))})
+        filas.append(
+            {
+                "ID_imagen": fila.ID_imagen,
+                "pct_original": fila.porcentaje_area,
+                "pct_aumentada": porcentaje_area(Image.fromarray(nueva)),
+            }
+        )
 
 df = pd.DataFrame(filas)
 cortes = [0, 10, 70, 100.01]
