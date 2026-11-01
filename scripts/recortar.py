@@ -16,4 +16,4 @@ for fila in tabla.itertuples():
     recorte = figura.crop(caja).convert("RGB")
     recorte.save(CARPETA_SALIDA / f"{fila.ID_imagen}.png")
 
-print(f"Listo: {len(tabla)} recortes en {CARPETA_SALIDA}")
+

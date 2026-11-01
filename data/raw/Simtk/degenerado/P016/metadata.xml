@@ -1,0 +1,9 @@
+<!--P016-->
+<subject>
+	<Gender type="radio" value="Male"/>
+	<Age type="integer" unit="years" value="53"/>
+	<TKA type="radio" value="Right"/>
+	<Mean_HHGS_Score type="integer" value="9"/>
+	<Mean_OARSI_Score type="integer" value="13"/>
+	<PLM_Score type="integer" value="6"/>
+</subject>

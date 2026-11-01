@@ -1,0 +1,4 @@
+PatientID,gender_(F=1;M=2),Age_(years),TKA_left_or_right,Tissue_Location_on_Condyle,HistologyID,Scorer,Mean_HHGS_Score,Mean_OARSI_Score,PLM_Score,Structure_read1,Cells_read1,SafO_read1,Tidemark_read1,Total_HHGS_read1,Grade_read1,Stage_read1,Total_OARSI _read1,Structure_read2,Cells_read2,SafO_read2,Tidemark_read2,Total_HHGS_read2,Grade_read2,Stage_read2,Total_OARSI _read2,Structure_read3,Cells_read3,SafO_read3,Tidemark_read3,Total_HHGS_read3,Grade_read3,Stage_read3,Total_OARSI ,PLM_score_Changoor_read1,PLM_signal_at_surface_read1,PLM_signal_in_DZ_read1,PLM_total
+P031,2,50,R,Medial,58,1,4,3,0,1.0,1.0,1.0,1,4.0,2.0,3.0,6.0,1.0,1.0,1.0,1.0,4.0,1.5,3.0,4.5,1.0,1.0,1.0,1,4.0,1.5,3.0,4.5,,,,
+P031,2,50,R,Medial,58,3,4,3,0,1.0,1.0,1.0,1,4.0,2.0,2.0,4.0,1.0,1.0,1.0,1.0,4.0,1.5,2.0,3.0,1.0,1.0,1.0,1,4.0,1.5,2.0,3.0,,,,
+P031,2,50,R,Medial,58,2,4,3,0,1.0,0.0,1.0,1,3.0,1.5,1.0,1.5,1.0,1.0,2.0,1.0,5.0,2.0,2.0,4.0,1.0,1.0,1.0,1,4.0,1,2.0,2.0,5.0,0.0,0.0,0.0
