@@ -15,5 +15,3 @@ for fila in tabla.itertuples():
     caja = (fila.x, fila.y, fila.x + fila.ancho, fila.y + fila.alto)
     recorte = figura.crop(caja).convert("RGB")
     recorte.save(CARPETA_SALIDA / f"{fila.ID_imagen}.png")
-
-

@@ -1,4 +1,3 @@
-
 from pathlib import Path
 
 import numpy as np
@@ -24,16 +23,33 @@ for ronda in range(5):
     prueba = (tabla["fold"] == ronda).to_numpy()
     entrenamiento = ~prueba
 
-    pesos = compute_class_weight("balanced", classes=np.unique(y[entrenamiento]), y=y[entrenamiento])
+    pesos = compute_class_weight(
+        "balanced", classes=np.unique(y[entrenamiento]), y=y[entrenamiento]
+    )
 
     modelo = construir_modelo()
-    modelo.fit(X[entrenamiento], y[entrenamiento], epochs=30, batch_size=32,
-               class_weight=dict(enumerate(pesos)))
+    modelo.fit(
+        X[entrenamiento],
+        y[entrenamiento],
+        epochs=30,
+        batch_size=32,
+        class_weight=dict(enumerate(pesos)),
+    )
 
     probs = modelo.predict(X[prueba])
     for id_img, real, p in zip(tabla["ID_imagen"][prueba], y[prueba], probs):
-        resultados.append({"ID_imagen": id_img, "fold": ronda, "clase_real": real,
-                           "clase_predicha": int(p.argmax()),
-                           "p_bajo": p[0], "p_medio": p[1], "p_alto": p[2]})
+        resultados.append(
+            {
+                "ID_imagen": id_img,
+                "fold": ronda,
+                "clase_real": real,
+                "clase_predicha": int(p.argmax()),
+                "p_bajo": p[0],
+                "p_medio": p[1],
+                "p_alto": p[2],
+            }
+        )
 
-pd.DataFrame(resultados).to_csv("data/processed/predicciones_safranina.csv", index=False)
+pd.DataFrame(resultados).to_csv(
+    "data/processed/predicciones_safranina.csv", index=False
+)

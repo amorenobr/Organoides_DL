@@ -18,4 +18,3 @@ for fila in tabla.itertuples():
     destino = SALIDA / fila.grupo
     destino.mkdir(parents=True, exist_ok=True)
     cuadro.save(destino / f"{fila.paciente}_{fila.muestra}_{fila.cuadro}.png")
-

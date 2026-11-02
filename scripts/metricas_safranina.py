@@ -17,11 +17,17 @@ print(confusion_matrix(real, pred))
 
 filas = []
 for ronda, g in df.groupby("fold"):
-    filas.append({
-        "ronda": ronda,
-        "precision_balanceada": balanced_accuracy_score(g["clase_real"], g["clase_predicha"]),
-        "kappa": cohen_kappa_score(g["clase_real"], g["clase_predicha"], weights="quadratic"),
-    })
+    filas.append(
+        {
+            "ronda": ronda,
+            "precision_balanceada": balanced_accuracy_score(
+                g["clase_real"], g["clase_predicha"]
+            ),
+            "kappa": cohen_kappa_score(
+                g["clase_real"], g["clase_predicha"], weights="quadratic"
+            ),
+        }
+    )
 
 rondas = pd.DataFrame(filas)
 print(rondas.round(2))

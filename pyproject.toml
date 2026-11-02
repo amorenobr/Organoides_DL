@@ -27,6 +27,7 @@ verificar = { cmd = "python scripts/area_augmentation.py", env = { PYTHONPATH = 
 entrenar = { cmd = "python scripts/entrenar.py", env = { PYTHONPATH = "src" } }
 metricas = "python scripts/metricas_safranina.py"
 recortar_sim = "python scripts/recortar_simtk.py"
+huellas = { cmd = "python scripts/huellas_densnet121.py", env = {PYTHONPATH = "src"}}
 
 
 [tool.pixi.dependencies]
