@@ -33,3 +33,4 @@ rondas = pd.DataFrame(filas)
 print(rondas.round(2))
 print(rondas[["precision_balanceada", "kappa"]].agg(["mean", "std"]).round(2))
 print(classification_report(real, pred, target_names=["bajo", "medio", "alto"]))
+

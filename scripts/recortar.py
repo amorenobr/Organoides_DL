@@ -4,8 +4,8 @@ import pandas as pd
 from PIL import Image
 
 CARPETA_FIGURAS = Path("data/raw/figuras_completas")
-TABLA = Path("data/raw/Recortes_Final.xlsx")
-CARPETA_SALIDA = Path("data/raw/figuras")
+TABLA = Path("data/raw/recortes.xlsx")
+CARPETA_SALIDA = Path("data/raw/figuras_col")
 
 CARPETA_SALIDA.mkdir(parents=True, exist_ok=True)
 tabla = pd.read_excel(TABLA)
