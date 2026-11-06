@@ -22,12 +22,16 @@ fmt = "ruff format ."
 typecheck = "mypy src/organoides_DL"
 medir = { cmd = "python scripts/medir_area.py", env = { PYTHONPATH = "src" } }
 histograma = { cmd = "python scripts/graficar_histograma.py", env = { PYTHONPATH = "src" } }
-preparar = "python scripts/divisionart_safranina.py"
+preparar_safo = "python scripts/divisionart_safranina.py"
 verificar = { cmd = "python scripts/area_augmentation.py", env = { PYTHONPATH = "src" } }
 entrenar = { cmd = "python scripts/entrenar.py", env = { PYTHONPATH = "src" } }
 metricas = "python scripts/metricas_safranina.py"
 recortar_sim = "python scripts/recortar_simtk.py"
 huellas = { cmd = "python scripts/huellas_densnet121.py", env = {PYTHONPATH = "src"}}
+medir_col = { cmd = "python scripts/medir_colageno.py", env = { PYTHONPATH = "src" } }
+preparar_colII ="python scripts/divisionart_colII.py"
+entrenar_colII  ="python scripts/entrenar_colII.py"
+metricas_colII ="python scripts/metricas_colII.py"
 
 
 [tool.pixi.dependencies]
@@ -41,6 +45,7 @@ pillow = ">=12.3.0,<13"
 matplotlib = ">=3.11.2,<4"
 scikit-learn = ">=1.9.1,<2"
 tensorflow = ">=2.21.0,<3"
+scikit-image = ">=0.26.0,<0.27"
 
 [tool.pixi.pypi-dependencies]
 Organoides_DL = { path = ".", editable = true }
