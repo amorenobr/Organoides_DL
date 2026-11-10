@@ -18,6 +18,7 @@ X = np.stack([cargar_imagen(CARPETA / f"{i}.png") for i in tabla["ID_imagen"]])
 y = tabla["clase"].map(clases).to_numpy()
 
 resultados = []
+curvas = []
 
 for ronda in range(5):
     prueba = (tabla["fold"] == ronda).to_numpy()
@@ -28,14 +29,25 @@ for ronda in range(5):
     )
 
     modelo = construir_modelo()
-    modelo.fit(
+    historia = modelo.fit(
         X[entrenamiento],
         y[entrenamiento],
+        validation_data=(X[prueba], y[prueba]),
         epochs=30,
         batch_size=32,
         class_weight=dict(enumerate(pesos)),
     )
-
+    for epoca, (perdida, perdida_val) in enumerate(
+        zip(historia.history["loss"], historia.history["val_loss"]), start=1
+    ):
+        curvas.append(
+            {
+                "fold": ronda,
+                "epoca": epoca,
+                "entrenamiento": perdida,
+                "validacion": perdida_val,
+            }
+        )
     probs = modelo.predict(X[prueba])
     for id_img, real, p in zip(tabla["ID_imagen"][prueba], y[prueba], probs):
         resultados.append(
@@ -50,6 +62,7 @@ for ronda in range(5):
             }
         )
 
+pd.DataFrame(curvas).to_csv("data/processed/curvas_colagenoII.csv", index=False)
 pd.DataFrame(resultados).to_csv(
     "data/processed/predicciones_colagenoII.csv", index=False
 )
