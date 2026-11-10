@@ -32,6 +32,8 @@ medir_col = { cmd = "python scripts/medir_colageno.py", env = { PYTHONPATH = "sr
 preparar_colII ="python scripts/divisionart_colII.py"
 entrenar_colII  ="python scripts/entrenar_colII.py"
 metricas_colII ="python scripts/metricas_colII.py"
+evaluar = { cmd = "python scripts/evaluar_organoide.py", env = { PYTHONPATH = "src" } }
+entrenar_final = { cmd = "python scripts/entrenar_final.py", env = { PYTHONPATH = "src" } }
 
 
 [tool.pixi.dependencies]

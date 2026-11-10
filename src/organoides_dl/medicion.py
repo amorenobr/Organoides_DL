@@ -17,8 +17,11 @@ def porcentaje_area(imagen: Image.Image) -> float:
 
     return float(tenido.sum() / tejido.sum() * 100)
 
+
 def porcentaje_dab(rgb, umbral=0.025):
     gris = rgb.mean(axis=2)
-    tejido = binary_fill_holes(binary_closing(gris < threshold_otsu(gris), iterations=3))
+    tejido = binary_fill_holes(
+        binary_closing(gris < threshold_otsu(gris), iterations=3)
+    )
     cafe = rgb2hed(rgb)[:, :, 2] >= umbral
     return float((cafe & tejido).sum() / tejido.sum() * 100)

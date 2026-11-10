@@ -24,3 +24,16 @@ def construir_modelo():
         metrics=["accuracy"],
     )
     return modelo
+
+
+def descongelar(modelo):
+    base = modelo.get_layer("densenet121")
+    base.trainable = True
+    for capa in base.layers:
+        if not capa.name.startswith("conv5"):
+            capa.trainable = False
+    modelo.compile(
+        optimizer=keras.optimizers.SGD(learning_rate=0.00001, momentum=0.9),
+        loss="sparse_categorical_crossentropy",
+        metrics=["accuracy"],
+    )

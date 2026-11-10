@@ -13,7 +13,9 @@
 # Imagene propias
 data/raw/figuras/
 data/raw/figuras_completas/
-*.png
+data/raw/figuras_col/
+data/processed/simtk/
+!reports/*.png
 *.jpg
 *.jpeg
 *.webp
