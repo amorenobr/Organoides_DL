@@ -17,7 +17,9 @@ for carpeta, folds, nombre in [
     ("data/raw/figuras_col", "data/processed/colageno_folds.csv", "colagenoII"),
 ]:
     tabla = pd.read_csv(folds)
-    X = np.stack([cargar_imagen(Path(carpeta) / f"{i}.png") for i in tabla["ID_imagen"]])
+    X = np.stack(
+        [cargar_imagen(Path(carpeta) / f"{i}.png") for i in tabla["ID_imagen"]]
+    )
     y = tabla["clase"].map(clases).to_numpy()
     pesos = compute_class_weight("balanced", classes=np.unique(y), y=y)
 

@@ -84,6 +84,4 @@ for ronda in range(5):
         )
 
 pd.DataFrame(curvas).to_csv("data/processed/curvas_colII_ft.csv", index=False)
-pd.DataFrame(resultados).to_csv(
-    "data/processed/predicciones_colII_ft.csv", index=False
-)
+pd.DataFrame(resultados).to_csv("data/processed/predicciones_colII_ft.csv", index=False)

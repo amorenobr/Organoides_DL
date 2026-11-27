@@ -24,7 +24,9 @@ for id_imagen in sys.argv[1:]:
     gradientes = cinta.gradient(puntaje, mapas)
     pesos = tf.reduce_mean(gradientes, axis=(1, 2))
     cam = tf.nn.relu(tf.reduce_sum(mapas[0] * pesos[0], axis=-1)).numpy()
-    cam = tf.image.resize(cam[..., None] / (cam.max() + 1e-8), (224, 224)).numpy()[..., 0]
+    cam = tf.image.resize(cam[..., None] / (cam.max() + 1e-8), (224, 224)).numpy()[
+        ..., 0
+    ]
 
     plt.figure()
     plt.imshow(imagen[0].astype("uint8"))

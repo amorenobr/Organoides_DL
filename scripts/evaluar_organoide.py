@@ -26,14 +26,22 @@ if tincion == "safranina":
     huellas = pd.read_csv("data/processed/huellas.csv")
     numeros = huellas.columns[2:]
     huellas["paciente"] = huellas["imagen"].str.split("_").str[0]
-    pacientes = huellas[huellas["grupo"] != "figuras"].groupby(["grupo", "paciente"])[numeros].mean()
+    pacientes = (
+        huellas[huellas["grupo"] != "figuras"]
+        .groupby(["grupo", "paciente"])[numeros]
+        .mean()
+    )
     degenerado = pacientes.loc["degenerado"].mean().to_numpy()
     eje = pacientes.loc["sano"].mean().to_numpy() - degenerado
 
-    densenet = keras.applications.DenseNet121(weights="imagenet", include_top=False, pooling="avg")
+    densenet = keras.applications.DenseNet121(
+        weights="imagenet", include_top=False, pooling="avg"
+    )
     huella = densenet.predict(keras.applications.densenet.preprocess_input(imagen))[0]
     indice = (huella - degenerado) @ eje / (eje @ eje)
-    atipicidad = np.linalg.norm((huella - degenerado) - indice * eje) / np.linalg.norm(eje)
+    atipicidad = np.linalg.norm((huella - degenerado) - indice * eje) / np.linalg.norm(
+        eje
+    )
 
     print(f"Índice de similitud: {indice:.2f}  (0 = degenerado, 1 = sano)")
     print(f"Atipicidad: {atipicidad:.2f}  (tejido nativo ≈ 1.4)")
